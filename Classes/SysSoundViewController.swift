@@ -63,35 +63,13 @@ import AVFoundation
 
 @objc(SysSoundViewController)
 class SysSoundViewController: UIViewController, AVAudioPlayerDelegate {
-    //
-    //	CFURLRef		soundFileURLRef;
-    //	SystemSoundID	soundFileObject;
-    //
-    //}
-    //
-    //@property (readwrite)	CFURLRef		soundFileURLRef;
+
     var soundFileURLRef: NSURL!
-    //@property (readonly)	SystemSoundID	soundFileObject;
     var soundFileObject: SystemSoundID = 0
     
     var player: AVAudioPlayer!
-    //
-    //- (IBAction) playSystemSound: (id) sender;
-    //- (IBAction) playAlertSound: (id) sender;
-    //- (IBAction) vibrate: (id) sender;
-    //
-    //@end
-    //
-    //
-    //#import "SysSoundViewController.h"
-    //
-    //@implementation SysSoundViewController
-    //
-    //@synthesize soundFileURLRef;
-    //@synthesize soundFileObject;
-    //
-    //
-    //- (void) viewDidLoad {
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
