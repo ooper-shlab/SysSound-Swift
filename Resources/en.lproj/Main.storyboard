@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Helvetica.ttc">
+            <string>Helvetica-Bold</string>
+            <string>Helvetica-Bold</string>
+            <string>Helvetica-Bold</string>
+            <string>Helvetica-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Sys Sound View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SysSoundViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92J-fc-22G">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="SysSound" id="dCH-Ku-Ad2"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrg-Mi-8S1">
+                                <rect key="frame" x="160" y="189" width="280" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="5Ec-VZ-RdE"/>
+                                    <constraint firstAttribute="height" constant="37" id="okM-an-RT7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Alert Sound">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" title="Alert Sound">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Alert Sound">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" title="Alert Sound">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAlertSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HG1-rF-B05"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQU-TE-5Ic">
+                                <rect key="frame" x="268" y="270" width="65" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Vibration">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" title="Vibration">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Vibration">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" title="Vibration">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="vibrate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aAc-aU-cvT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SH0-ti-0dl">
+                                <rect key="frame" x="160" y="344" width="280" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="CCo-Un-aVu"/>
+                                    <constraint firstAttribute="height" constant="37" id="jjG-UM-ass"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Play with AVAudioPlayer">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playWithAVAudioPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="doc-GF-F2S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSZ-Mo-OfV">
+                                <rect key="frame" x="248" y="108" width="105" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="EYX-O9-Jcm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="System Sound">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" title="System Sound">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="System Sound">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" title="System Sound">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSystemSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKE-Be-H82"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="92J-fc-22G" firstAttribute="centerX" secondItem="qQU-TE-5Ic" secondAttribute="centerX" id="BeR-BS-A8D"/>
+                            <constraint firstItem="vrg-Mi-8S1" firstAttribute="centerX" secondItem="qQU-TE-5Ic" secondAttribute="centerX" id="Bn6-2R-Xim"/>
+                            <constraint firstItem="92J-fc-22G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JeI-ie-8D6"/>
+                            <constraint firstItem="PSZ-Mo-OfV" firstAttribute="centerX" secondItem="92J-fc-22G" secondAttribute="centerX" id="N6W-Lj-der"/>
+                            <constraint firstItem="PSZ-Mo-OfV" firstAttribute="top" secondItem="92J-fc-22G" secondAttribute="bottom" constant="44" id="RiQ-UG-vXb"/>
+                            <constraint firstItem="SH0-ti-0dl" firstAttribute="top" secondItem="qQU-TE-5Ic" secondAttribute="bottom" constant="44" id="Wf2-lP-NhW"/>
+                            <constraint firstAttribute="trailing" secondItem="92J-fc-22G" secondAttribute="trailing" id="lbH-nz-c6e"/>
+                            <constraint firstItem="92J-fc-22G" firstAttribute="centerX" secondItem="SH0-ti-0dl" secondAttribute="centerX" id="mXk-0O-Nx1"/>
+                            <constraint firstItem="92J-fc-22G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oOs-lS-dbY"/>
+                            <constraint firstItem="vrg-Mi-8S1" firstAttribute="top" secondItem="PSZ-Mo-OfV" secondAttribute="bottom" constant="44" id="reC-6W-Me7"/>
+                            <constraint firstItem="vrg-Mi-8S1" firstAttribute="centerX" secondItem="PSZ-Mo-OfV" secondAttribute="centerX" id="tUN-Ct-AHF"/>
+                            <constraint firstItem="qQU-TE-5Ic" firstAttribute="top" secondItem="vrg-Mi-8S1" secondAttribute="bottom" constant="44" id="vHN-YO-qb3"/>
+                            <constraint firstItem="92J-fc-22G" firstAttribute="centerX" secondItem="vrg-Mi-8S1" secondAttribute="centerX" id="ynu-xd-tWP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="265"/>
+        </scene>
+    </scenes>
+</document>

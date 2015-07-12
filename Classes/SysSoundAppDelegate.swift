@@ -59,13 +59,14 @@ import UIKit
 @objc(SysSoundAppDelegate)
 class SysSoundAppDelegate: UIResponder, UIApplicationDelegate {
     
-    @IBOutlet var window: UIWindow?
-    @IBOutlet var viewController: SysSoundViewController!
+    var window: UIWindow?
+//    @IBOutlet var viewController: SysSoundViewController!
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         
-        window!.rootViewController = viewController
+//        viewController.view.frame = window!.frame
+//        window!.rootViewController = viewController
         
         return true
     }

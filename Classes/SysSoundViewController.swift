@@ -67,7 +67,7 @@ class SysSoundViewController: UIViewController, AVAudioPlayerDelegate {
     var soundFileURLRef: NSURL!
     var soundFileObject: SystemSoundID = 0
     
-    var player: AVAudioPlayer!
+    var player: AVAudioPlayer?
     
     
     override func viewDidLoad() {
@@ -87,21 +87,25 @@ class SysSoundViewController: UIViewController, AVAudioPlayerDelegate {
         // Create a system sound object representing the sound file.
         AudioServicesCreateSystemSoundID(soundFileURLRef, &soundFileObject)
         
-        player = AVAudioPlayer(contentsOfURL: soundFileURLRef, error: nil)
-        player.delegate = self
-        player.prepareToPlay()
+        do {
+            player = try AVAudioPlayer(contentsOfURL: soundFileURLRef)
+        } catch _ {
+            player = nil
+        }
+        player?.delegate = self
+        player?.prepareToPlay()
     }
     
     
     // Respond to a tap on the System Sound button.
-    @IBAction func playSystemSound(AnyObject) {
+    @IBAction func playSystemSound(_: AnyObject) {
         
         AudioServicesPlaySystemSound(soundFileObject)
     }
     
     
     // Respond to a tap on the Alert Sound button.
-    @IBAction func playAlertSound(AnyObject) {
+    @IBAction func playAlertSound(_: AnyObject) {
         
         AudioServicesPlayAlertSound(soundFileObject)
     }
@@ -109,19 +113,19 @@ class SysSoundViewController: UIViewController, AVAudioPlayerDelegate {
     
     // Respond to a tap on the Vibrate button. In the Simulator and on devices with no
     //    vibration element, this method does nothing.
-    @IBAction func vibrate(AnyObject) {
+    @IBAction func vibrate(_: AnyObject) {
         
-        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
     
     
-    @IBAction func playWithAVAudioPlayer(AnyObject) {
+    @IBAction func playWithAVAudioPlayer(_: AnyObject) {
         NSLog("started playing")
-        player.play()
+        player?.play()
     }
     
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         //Do something when finished playing
         NSLog("finished playing")
     }

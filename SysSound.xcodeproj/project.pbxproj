@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A1104470E2C059D0000B08D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1104460E2C059D0000B08D /* AudioToolbox.framework */; };
-		0A5808E111F38FF6004F0A23 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5808D111F38FF6004F0A23 /* MainWindow.xib */; };
-		0A5808E211F38FF6004F0A23 /* SysSoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5808D311F38FF6004F0A23 /* SysSoundViewController.xib */; };
 		0A5808E411F38FF6004F0A23 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5808D711F38FF6004F0A23 /* Default.png */; };
 		0A5808E511F38FF6004F0A23 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5808D811F38FF6004F0A23 /* Icon-72.png */; };
 		0A5808E611F38FF6004F0A23 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5808D911F38FF6004F0A23 /* Icon-Small-50.png */; };
@@ -21,17 +19,17 @@
 		0A5808EC11F38FF6004F0A23 /* tap.aif in Resources */ = {isa = PBXBuildFile; fileRef = 0A5808E011F38FF6004F0A23 /* tap.aif */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		D71034671B52987E004DA8F1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71034651B52987E004DA8F1 /* Launch Screen.storyboard */; };
+		D71EE1A81B520918007826E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71EE1A61B520918007826E5 /* Main.storyboard */; };
 		D799CD891AFB1B1D00874E3C /* SysSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799CD881AFB1B1D00874E3C /* SysSoundViewController.swift */; };
 		D799CD8B1AFB1D2800874E3C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D799CD8A1AFB1D2800874E3C /* Default-568h@2x.png */; };
 		D799CD8D1AFB1D4600874E3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D799CD8C1AFB1D4600874E3C /* Images.xcassets */; };
 		D799CD911AFB1F8900874E3C /* SysSoundAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799CD901AFB1F8900874E3C /* SysSoundAppDelegate.swift */; };
+		D7AC4C551B529F990060D779 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AC4C541B529F990060D779 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A1104460E2C059D0000B08D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		0A5808D211F38FF6004F0A23 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = MainWindow.xib; sourceTree = "<group>"; };
-		0A5808D411F38FF6004F0A23 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = SysSoundViewController.xib; sourceTree = "<group>"; };
-		0A5808D611F38FF6004F0A23 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		0A5808D711F38FF6004F0A23 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0A5808D811F38FF6004F0A23 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		0A5808D911F38FF6004F0A23 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -45,12 +43,17 @@
 		1D6058910D05DD3D006BFB54 /* SysSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SysSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D71034661B52987E004DA8F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D71EE1A71B520918007826E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = Main.storyboard; sourceTree = "<group>"; };
+		D78DFFDC1B50EC3E009274E7 /* SysSoundAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysSoundAppDelegate.h; sourceTree = "<group>"; };
+		D78DFFDD1B50EC3E009274E7 /* SysSoundAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysSoundAppDelegate.m; sourceTree = "<group>"; };
 		D799CD881AFB1B1D00874E3C /* SysSoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysSoundViewController.swift; sourceTree = "<group>"; };
-		D799CD8A1AFB1D2800874E3C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D799CD8A1AFB1D2800874E3C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		D799CD8C1AFB1D4600874E3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SysSound/Images.xcassets; sourceTree = "<group>"; };
 		D799CD901AFB1F8900874E3C /* SysSoundAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysSoundAppDelegate.swift; sourceTree = "<group>"; };
 		D799CD921AFB2C8D00874E3C /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		D799CD961AFB2CF200874E3C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D7AC4C541B529F990060D779 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D78DFFDC1B50EC3E009274E7 /* SysSoundAppDelegate.h */,
+				D78DFFDD1B50EC3E009274E7 /* SysSoundAppDelegate.m */,
 				D799CD901AFB1F8900874E3C /* SysSoundAppDelegate.swift */,
 				D799CD881AFB1B1D00874E3C /* SysSoundViewController.swift */,
 			);
@@ -79,8 +84,8 @@
 		0A5808D011F38FF6004F0A23 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				0A5808D111F38FF6004F0A23 /* MainWindow.xib */,
-				0A5808D311F38FF6004F0A23 /* SysSoundViewController.xib */,
+				D71EE1A61B520918007826E5 /* Main.storyboard */,
+				D71034651B52987E004DA8F1 /* Launch Screen.storyboard */,
 			);
 			name = en.lproj;
 			path = Resources/en.lproj;
@@ -89,8 +94,9 @@
 		0A5808D511F38FF6004F0A23 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				0A5808D611F38FF6004F0A23 /* Background.png */,
+				D7AC4C541B529F990060D779 /* Default@2x.png */,
 				0A5808D711F38FF6004F0A23 /* Default.png */,
+				D799CD8A1AFB1D2800874E3C /* Default-568h@2x.png */,
 				0A5808D811F38FF6004F0A23 /* Icon-72.png */,
 				0A5808D911F38FF6004F0A23 /* Icon-Small-50.png */,
 				0A5808DA11F38FF6004F0A23 /* Icon-Small.png */,
@@ -125,7 +131,6 @@
 			children = (
 				D799CD961AFB2CF200874E3C /* README.md */,
 				D799CD921AFB2C8D00874E3C /* ReadMe.txt */,
-				D799CD8A1AFB1D2800874E3C /* Default-568h@2x.png */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -190,7 +195,8 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SysSound" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -217,18 +223,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A5808E111F38FF6004F0A23 /* MainWindow.xib in Resources */,
-				0A5808E211F38FF6004F0A23 /* SysSoundViewController.xib in Resources */,
 				0A5808E411F38FF6004F0A23 /* Default.png in Resources */,
+				D71034671B52987E004DA8F1 /* Launch Screen.storyboard in Resources */,
 				D799CD8D1AFB1D4600874E3C /* Images.xcassets in Resources */,
 				0A5808E511F38FF6004F0A23 /* Icon-72.png in Resources */,
 				0A5808E611F38FF6004F0A23 /* Icon-Small-50.png in Resources */,
+				D71EE1A81B520918007826E5 /* Main.storyboard in Resources */,
 				D799CD8B1AFB1D2800874E3C /* Default-568h@2x.png in Resources */,
 				0A5808E711F38FF6004F0A23 /* Icon-Small.png in Resources */,
 				0A5808E811F38FF6004F0A23 /* Icon-Small@2x.png in Resources */,
 				0A5808E911F38FF6004F0A23 /* Icon.png in Resources */,
 				0A5808EA11F38FF6004F0A23 /* Icon@2x.png in Resources */,
 				0A5808EB11F38FF6004F0A23 /* iTunesArtwork in Resources */,
+				D7AC4C551B529F990060D779 /* Default@2x.png in Resources */,
 				0A5808EC11F38FF6004F0A23 /* tap.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,20 +255,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0A5808D111F38FF6004F0A23 /* MainWindow.xib */ = {
+		D71034651B52987E004DA8F1 /* Launch Screen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0A5808D211F38FF6004F0A23 /* en */,
+				D71034661B52987E004DA8F1 /* en */,
 			);
-			name = MainWindow.xib;
+			name = "Launch Screen.storyboard";
 			sourceTree = "<group>";
 		};
-		0A5808D311F38FF6004F0A23 /* SysSoundViewController.xib */ = {
+		D71EE1A61B520918007826E5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0A5808D411F38FF6004F0A23 /* en */,
+				D71EE1A71B520918007826E5 /* en */,
 			);
-			name = SysSoundViewController.xib;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -281,6 +288,7 @@
 				GCC_PREFIX_HEADER = SysSound_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = SysSound;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -298,6 +306,7 @@
 				GCC_PREFIX_HEADER = SysSound_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = SysSound;
 			};
 			name = Release;
@@ -306,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
