@@ -61,8 +61,15 @@ import UIKit
 import AudioToolbox
 import AVFoundation
 
+@objc protocol AudioServicesPlaySystemSoundDelegate {
+    func audioServicesPlaySystemSoundCompleted(soundId: SystemSoundID)
+}
+func MyAudioServicesSystemSoundCompletionHandler(soundId: SystemSoundID, inClientData: UnsafeMutablePointer<Void>) {
+    let delegate = unsafeBitCast(inClientData, AudioServicesPlaySystemSoundDelegate.self)
+    delegate.audioServicesPlaySystemSoundCompleted(soundId)
+}
 @objc(SysSoundViewController)
-class SysSoundViewController: UIViewController, AVAudioPlayerDelegate {
+class SysSoundViewController: UIViewController, AVAudioPlayerDelegate, AudioServicesPlaySystemSoundDelegate  {
 
     var soundFileURLRef: NSURL!
     var soundFileObject: SystemSoundID = 0
@@ -123,6 +130,19 @@ class SysSoundViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func playWithAVAudioPlayer(_: AnyObject) {
         NSLog("started playing")
         player?.play()
+    }
+    
+    private var repeatCount: Int = 3
+    @IBAction func repeatVibration(_: AnyObject) {
+        let proc: AudioServicesSystemSoundCompletionProc = MyAudioServicesSystemSoundCompletionHandler
+        AudioServicesAddSystemSoundCompletion(kSystemSoundID_Vibrate, nil, nil, proc, UnsafeMutablePointer(unsafeAddressOf(self)))
+        self.repeatCount = 3
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
+    func audioServicesPlaySystemSoundCompleted(soundId: SystemSoundID) {
+        if( --repeatCount > 0 ) {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        }
     }
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {

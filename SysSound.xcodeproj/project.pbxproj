@@ -45,8 +45,6 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D71034661B52987E004DA8F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D71EE1A71B520918007826E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = Main.storyboard; sourceTree = "<group>"; };
-		D78DFFDC1B50EC3E009274E7 /* SysSoundAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysSoundAppDelegate.h; sourceTree = "<group>"; };
-		D78DFFDD1B50EC3E009274E7 /* SysSoundAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysSoundAppDelegate.m; sourceTree = "<group>"; };
 		D799CD881AFB1B1D00874E3C /* SysSoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysSoundViewController.swift; sourceTree = "<group>"; };
 		D799CD8A1AFB1D2800874E3C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		D799CD8C1AFB1D4600874E3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SysSound/Images.xcassets; sourceTree = "<group>"; };
@@ -73,8 +71,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D78DFFDC1B50EC3E009274E7 /* SysSoundAppDelegate.h */,
-				D78DFFDD1B50EC3E009274E7 /* SysSoundAppDelegate.m */,
 				D799CD901AFB1F8900874E3C /* SysSoundAppDelegate.swift */,
 				D799CD881AFB1B1D00874E3C /* SysSoundViewController.swift */,
 			);

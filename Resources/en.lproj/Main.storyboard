@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Helvetica.ttc">
+            <string>Helvetica-Bold</string>
             <string>Helvetica-Bold</string>
             <string>Helvetica-Bold</string>
             <string>Helvetica-Bold</string>
@@ -134,13 +135,26 @@
                                     <action selector="playSystemSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKE-Be-H82"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGh-5E-XTt">
+                                <rect key="frame" x="243" y="425" width="115" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="RepeatVibration">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="repeatVibration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X13-kT-B3x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mGh-5E-XTt" firstAttribute="centerX" secondItem="SH0-ti-0dl" secondAttribute="centerX" id="0JK-0l-9ck"/>
                             <constraint firstItem="92J-fc-22G" firstAttribute="centerX" secondItem="qQU-TE-5Ic" secondAttribute="centerX" id="BeR-BS-A8D"/>
                             <constraint firstItem="vrg-Mi-8S1" firstAttribute="centerX" secondItem="qQU-TE-5Ic" secondAttribute="centerX" id="Bn6-2R-Xim"/>
                             <constraint firstItem="92J-fc-22G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JeI-ie-8D6"/>
                             <constraint firstItem="PSZ-Mo-OfV" firstAttribute="centerX" secondItem="92J-fc-22G" secondAttribute="centerX" id="N6W-Lj-der"/>
+                            <constraint firstItem="mGh-5E-XTt" firstAttribute="top" secondItem="SH0-ti-0dl" secondAttribute="bottom" constant="44" id="Ova-JK-nd3"/>
                             <constraint firstItem="PSZ-Mo-OfV" firstAttribute="top" secondItem="92J-fc-22G" secondAttribute="bottom" constant="44" id="RiQ-UG-vXb"/>
                             <constraint firstItem="SH0-ti-0dl" firstAttribute="top" secondItem="qQU-TE-5Ic" secondAttribute="bottom" constant="44" id="Wf2-lP-NhW"/>
                             <constraint firstAttribute="trailing" secondItem="92J-fc-22G" secondAttribute="trailing" id="lbH-nz-c6e"/>
