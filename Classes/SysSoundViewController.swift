@@ -140,7 +140,8 @@ class SysSoundViewController: UIViewController, AVAudioPlayerDelegate, AudioServ
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     func audioServicesPlaySystemSoundCompleted(soundId: SystemSoundID) {
-        if( --repeatCount > 0 ) {
+        repeatCount -= 1
+        if( repeatCount > 0 ) {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         }
     }
