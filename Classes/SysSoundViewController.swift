@@ -62,16 +62,16 @@ import AudioToolbox
 import AVFoundation
 
 @objc protocol AudioServicesPlaySystemSoundDelegate {
-    func audioServicesPlaySystemSoundCompleted(soundId: SystemSoundID)
+    func audioServicesPlaySystemSoundCompleted(_ soundId: SystemSoundID)
 }
-func MyAudioServicesSystemSoundCompletionHandler(soundId: SystemSoundID, inClientData: UnsafeMutablePointer<Void>) {
-    let delegate = unsafeBitCast(inClientData, AudioServicesPlaySystemSoundDelegate.self)
+func MyAudioServicesSystemSoundCompletionHandler(_ soundId: SystemSoundID, inClientData: UnsafeMutableRawPointer?) {
+    let delegate = unsafeBitCast(inClientData, to: AudioServicesPlaySystemSoundDelegate.self)
     delegate.audioServicesPlaySystemSoundCompleted(soundId)
 }
 @objc(SysSoundViewController)
 class SysSoundViewController: UIViewController, AVAudioPlayerDelegate, AudioServicesPlaySystemSoundDelegate  {
 
-    var soundFileURLRef: NSURL!
+    var soundFileURLRef: URL!
     var soundFileObject: SystemSoundID = 0
     
     var player: AVAudioPlayer?
@@ -82,20 +82,20 @@ class SysSoundViewController: UIViewController, AVAudioPlayerDelegate, AudioServ
         super.viewDidLoad()
         
         // Provide a nice background for the app user interface.
-        self.view.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        self.view.backgroundColor = UIColor.groupTableViewBackground
         
         // Create the URL for the source audio file. The URLForResource:withExtension: method is
         //    new in iOS 4.0.
-        let tapSound = NSBundle.mainBundle().URLForResource("tap", withExtension: "aif")
+        let tapSound = Bundle.main.url(forResource: "tap", withExtension: "aif")
         
         // Store the URL as a CFURLRef instance
         self.soundFileURLRef = tapSound
         
         // Create a system sound object representing the sound file.
-        AudioServicesCreateSystemSoundID(soundFileURLRef, &soundFileObject)
+        AudioServicesCreateSystemSoundID(soundFileURLRef as CFURL, &soundFileObject)
         
         do {
-            player = try AVAudioPlayer(contentsOfURL: soundFileURLRef)
+            player = try AVAudioPlayer(contentsOf: soundFileURLRef)
         } catch _ {
             player = nil
         }
@@ -135,18 +135,18 @@ class SysSoundViewController: UIViewController, AVAudioPlayerDelegate, AudioServ
     private var repeatCount: Int = 3
     @IBAction func repeatVibration(_: AnyObject) {
         let proc: AudioServicesSystemSoundCompletionProc = MyAudioServicesSystemSoundCompletionHandler
-        AudioServicesAddSystemSoundCompletion(kSystemSoundID_Vibrate, nil, nil, proc, UnsafeMutablePointer(unsafeAddressOf(self)))
+        AudioServicesAddSystemSoundCompletion(kSystemSoundID_Vibrate, nil, nil, proc, Unmanaged.passUnretained(self).toOpaque())
         self.repeatCount = 3
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
-    func audioServicesPlaySystemSoundCompleted(soundId: SystemSoundID) {
+    func audioServicesPlaySystemSoundCompleted(_ soundId: SystemSoundID) {
         repeatCount -= 1
         if( repeatCount > 0 ) {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         }
     }
     
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         //Do something when finished playing
         NSLog("finished playing")
     }
