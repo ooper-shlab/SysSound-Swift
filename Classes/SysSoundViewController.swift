@@ -65,7 +65,7 @@ import AVFoundation
     func audioServicesPlaySystemSoundCompleted(_ soundId: SystemSoundID)
 }
 func MyAudioServicesSystemSoundCompletionHandler(_ soundId: SystemSoundID, inClientData: UnsafeMutableRawPointer?) {
-    let delegate = unsafeBitCast(inClientData, to: AudioServicesPlaySystemSoundDelegate.self)
+    let delegate = Unmanaged<AudioServicesPlaySystemSoundDelegate>.fromOpaque(inClientData!).takeUnretainedValue()
     delegate.audioServicesPlaySystemSoundCompleted(soundId)
 }
 @objc(SysSoundViewController)
@@ -105,14 +105,14 @@ class SysSoundViewController: UIViewController, AVAudioPlayerDelegate, AudioServ
     
     
     // Respond to a tap on the System Sound button.
-    @IBAction func playSystemSound(_: AnyObject) {
+    @IBAction func playSystemSound(_: UIButton) {
         
         AudioServicesPlaySystemSound(soundFileObject)
     }
     
     
     // Respond to a tap on the Alert Sound button.
-    @IBAction func playAlertSound(_: AnyObject) {
+    @IBAction func playAlertSound(_: UIButton) {
         
         AudioServicesPlayAlertSound(soundFileObject)
     }
@@ -120,29 +120,45 @@ class SysSoundViewController: UIViewController, AVAudioPlayerDelegate, AudioServ
     
     // Respond to a tap on the Vibrate button. In the Simulator and on devices with no
     //    vibration element, this method does nothing.
-    @IBAction func vibrate(_: AnyObject) {
+    @IBAction func vibrate(_: UIButton) {
         
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
     
     
-    @IBAction func playWithAVAudioPlayer(_: AnyObject) {
+    @IBAction func playWithAVAudioPlayer(_: UIButton) {
         NSLog("started playing")
         player?.play()
     }
     
     private var repeatCount: Int = 3
-    @IBAction func repeatVibration(_: AnyObject) {
-        let proc: AudioServicesSystemSoundCompletionProc = MyAudioServicesSystemSoundCompletionHandler
-        AudioServicesAddSystemSoundCompletion(kSystemSoundID_Vibrate, nil, nil, proc, Unmanaged.passUnretained(self).toOpaque())
+    @IBAction func repeatVibration(_: UIButton) {
         self.repeatCount = 3
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        if #available(iOS 9.0, *) {
+            AudioServicesPlaySystemSoundWithCompletion(kSystemSoundID_Vibrate) {
+                self.audioServicesPlaySystemSoundCompleted(kSystemSoundID_Vibrate)
+            }
+        } else {
+            let proc: AudioServicesSystemSoundCompletionProc = MyAudioServicesSystemSoundCompletionHandler
+            AudioServicesAddSystemSoundCompletion(kSystemSoundID_Vibrate, nil, nil, proc, Unmanaged.passUnretained(self).toOpaque())
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        }
     }
     func audioServicesPlaySystemSoundCompleted(_ soundId: SystemSoundID) {
         repeatCount -= 1
-        if( repeatCount > 0 ) {
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        if #available(iOS 9.0, *) {
+            if repeatCount > 0 {
+                AudioServicesPlaySystemSoundWithCompletion(soundId) {
+                    self.audioServicesPlaySystemSoundCompleted(soundId)
+                }
+            }
+        } else {
+            if repeatCount > 0 {
+                AudioServicesPlaySystemSound(soundId)
+            } else {
+                AudioServicesRemoveSystemSoundCompletion(soundId)
+            }
         }
     }
     
